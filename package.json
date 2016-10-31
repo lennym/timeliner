@@ -1,0 +1,30 @@
+{
+  "name": "timeliner",
+  "version": "0.0.0",
+  "description": "Network Timeline Analyser",
+  "main": "index.js",
+  "bin": "bin/timeliner",
+  "scripts": {
+    "test": "semistandard ./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lennym/timeliner.git"
+  },
+  "author": "Leonard Martin <hello@lennym.co.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lennym/timeliner/issues"
+  },
+  "homepage": "https://github.com/lennym/timeliner#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "chromedriver": "^2.24.1",
+    "lodash.meanby": "^4.10.0",
+    "minimist": "^1.2.0",
+    "wd": "^1.0.0"
+  },
+  "devDependencies": {
+    "semistandard": "^9.1.0"
+  }
+}
