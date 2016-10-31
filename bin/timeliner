@@ -13,7 +13,7 @@ if (!timeliner.reporters[reporter]) {
   throw new Error(`Unrecognised reporter type "reporter"`);
 }
 
-if(args.help || !args.url) {
+if (args.help || !args.url) {
   require('./usage');
   process.exit();
 }
