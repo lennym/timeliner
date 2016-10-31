@@ -1,6 +1,6 @@
 # timeliner
 
-## And Automated Browser Timeline Analyser
+## Automated Browser Timeline Analyser
 
 Uses chromedriver to load a webpage a number of times and aggregates performance metrics from Chrome's devtools timelines.
 
