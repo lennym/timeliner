@@ -2,6 +2,16 @@
 
 const args = require('minimist')(process.argv.slice(2));
 
-const analyse = require('../');
+const timeliner = require('../');
 
-analyse(args);
+const reporter = args.reporter || 'basic';
+
+if (!timeliner.reporters[reporter]) {
+  throw new Error(`Unrecognised reporter type "reporter"`);
+}
+
+timeliner(args)
+  .then(timeliner.reporters[reporter])
+  .then((output) => {
+    console.log(output);
+  });
