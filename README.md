@@ -40,4 +40,4 @@ All options can be passed as flags in the command line, or as arguments in code 
 
 ### `reporter`
 
-*CLI only* *Optional* - set the reporter to be used to output results - supported values: `basic`, `json`
+*CLI only* - *Optional* - set the reporter to be used to output results - supported values: `basic`, `json`
