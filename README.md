@@ -44,7 +44,7 @@ set the number of times to load the page before aggregating results - Default `5
 
 ### `scroll`
 
-if set, injects a script into the page which binds a vertical scroll to `window.requestAnimationFrame` making the page scroll continuously - Default `false`
+if set, injects a script into the page which binds a vertical scroll to `window.requestAnimationFrame` making the page scroll continuously, recommended if using `fps` reporter - Default `false`
 
 ### `sleep`
 
