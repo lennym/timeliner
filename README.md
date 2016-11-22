@@ -12,6 +12,11 @@ Uses chromedriver to load a webpage a number of times and aggregates performance
 $ timeliner http://example.com
 ```
 
+```shell
+# analyse scrolling performance on a long webpage
+$ timeliner http://buzzfeed.com --reporter fps --sleep 5000
+```
+
 ### From code:
 
 ```javascript
