@@ -21,5 +21,9 @@ if (args.help || !args.url) {
 timeliner(args)
   .then(timeliner.reporters[reporter])
   .then((output) => {
-    console.log(output);
+    if (reporter === 'fps') {
+      output.forEach(o => { console.log(o); });
+    } else {
+      console.log(output);
+    }
   });
