@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/lennym/timeliner#readme",
   "dependencies": {
+    "babar": "0.0.3",
     "bluebird": "^3.4.6",
     "chromedriver": "^2.24.1",
     "lodash.meanby": "^4.10.0",
