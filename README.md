@@ -36,8 +36,16 @@ All options can be passed as flags in the command line, or as arguments in code 
 
 ### `count`
 
-*Optional* - set the nuber of times to load the page before aggregating results - Default `5`
+set the number of times to load the page before aggregating results - Default `5`
 
 ### `reporter`
 
-*CLI only* - *Optional* - set the reporter to be used to output results - supported values: `basic`, `json`
+*CLI only* - set the reporter to be used to output results - supported values: `basic`, `fps`, `json`
+
+### `scroll`
+
+if set, injects a script into the page which binds a vertical scroll to `window.requestAnimationFrame` making the page scroll continuously - Default `false`
+
+### `sleep`
+
+set how long (in ms) after the page completes loading to continue recording metrics - Default `0`
