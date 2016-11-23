@@ -54,3 +54,7 @@ if set, injects a script into the page which binds a vertical scroll to `window.
 ### `sleep`
 
 set how long (in ms) after the page completes loading to continue recording metrics - Default `0`
+
+### `driver`
+
+sets the url of the webdriver remote server to use - Default `http://localhost:9515` (note: default webdriver is started automatically)
