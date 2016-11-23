@@ -69,3 +69,24 @@ set how long (in ms) after the page completes loading to continue recording metr
 ### `driver`
 
 sets the url of the webdriver remote server to use - Default `http://localhost:9515` (note: default webdriver is started automatically)
+
+### `inject`
+
+`Function` - allows the definition of a custom step in the webdriver promise chain. Function is passed the [webdriver](https://github.com/admc/wd) browser object as a parameter and should return a promise. See [example below](#custom-metrics).
+
+## Custom metrics
+
+You can fire custom events by calling `console.timeStamp` from anywhere within your code with a label that matches `timeliner.*`. This will then report the first occurence of that event with a metric name of the wilcard portion of the timestamp label.
+
+Example - inject some custom javascript into your page to trigger a custom event after 1 second:
+
+```javascript
+const timeliner = require('timeliner');
+
+timeliner({
+    url: 'http://example.com',
+    inject: (browser) => {
+      return browser.execute(`setTimeout(() => console.timeStamp('timeliner.custom-metric'), 1000);`);
+    }
+  });
+```
