@@ -5,7 +5,7 @@
   "main": "index.js",
   "bin": "bin/timeliner",
   "scripts": {
-    "test": "semistandard ./lib/*.js ./lib/reporters/*.js ./bin/timeliner"
+    "test": "semistandard && semistandard bin/timeliner"
   },
   "repository": {
     "type": "git",
