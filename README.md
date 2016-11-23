@@ -45,7 +45,7 @@ set the number of times to load the page before aggregating results - Default `5
 
 ### `reporter`
 
-*CLI only* - set the reporter to be used to output results - supported values: `basic`, `fps`, `json`
+*CLI only* - set the reporter to be used to output results - supported values: `table` (default), `basic`, `fps`, `json`
 
 ### `scroll`
 
