@@ -10,6 +10,17 @@ Uses chromedriver to load a webpage a number of times and aggregates performance
 
 ```shell
 $ timeliner http://example.com
+
+# outputs
+┌──────────────────┬───────┬───────┬───────┐
+│ metric           │ mean  │ min   │ max   │
+├──────────────────┼───────┼───────┼───────┤
+│ render           │ 0.166 │ 0.147 │ 0.209 │
+├──────────────────┼───────┼───────┼───────┤
+│ domcontentloaded │ 0.166 │ 0.147 │ 0.209 │
+├──────────────────┼───────┼───────┼───────┤
+│ load             │ 0.119 │ 0.102 │ 0.163 │
+└──────────────────┴───────┴───────┴───────┘
 ```
 
 ```shell
