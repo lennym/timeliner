@@ -10,6 +10,17 @@ Uses chromedriver to load a webpage a number of times and aggregates performance
 
 ```shell
 $ timeliner http://example.com
+
+# outputs
+┌──────────────────┬───────┬───────┬───────┐
+│ metric           │ mean  │ min   │ max   │
+├──────────────────┼───────┼───────┼───────┤
+│ render           │ 0.166 │ 0.147 │ 0.209 │
+├──────────────────┼───────┼───────┼───────┤
+│ domcontentloaded │ 0.166 │ 0.147 │ 0.209 │
+├──────────────────┼───────┼───────┼───────┤
+│ load             │ 0.119 │ 0.102 │ 0.163 │
+└──────────────────┴───────┴───────┴───────┘
 ```
 
 ```shell
@@ -45,7 +56,7 @@ set the number of times to load the page before aggregating results - Default `5
 
 ### `reporter`
 
-*CLI only* - set the reporter to be used to output results - supported values: `basic`, `fps`, `json`
+*CLI only* - set the reporter to be used to output results - supported values: `table` (default), `basic`, `fps`, `json`
 
 ### `scroll`
 

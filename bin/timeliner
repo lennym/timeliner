@@ -7,7 +7,7 @@ args.url = args.url || args._[0];
 args.reporter = args.reporter || args.r;
 args.count = args.count || args.c;
 
-const reporter = args.reporter || 'basic';
+const reporter = args.reporter || 'table';
 
 if (!timeliner.reporters[reporter]) {
   throw new Error(`Unrecognised reporter type "reporter"`);
