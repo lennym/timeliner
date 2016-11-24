@@ -1,6 +1,6 @@
 {
   "name": "timeliner",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Network Timeline Analyser",
   "main": "index.js",
   "bin": "bin/timeliner",
