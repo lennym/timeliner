@@ -58,6 +58,10 @@ set the number of times to load the page before aggregating results - Default `5
 
 *CLI only* - set the reporter to be used to output results - supported values: `table` (default), `basic`, `fps`, `json`
 
+### `progress`
+
+if set then a progress bar will be output to the console showing test execution progress
+
 ### `scroll`
 
 if set, injects a script into the page which binds a vertical scroll to `window.requestAnimationFrame` making the page scroll continuously, recommended if using `fps` reporter - Default `false`
