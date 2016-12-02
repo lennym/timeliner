@@ -3,7 +3,7 @@
 const args = require('minimist')(process.argv.slice(2));
 const timeliner = require('../');
 
-args.url = args.url || args._[0];
+args.url = args.url || args._.slice(0, 2);
 args.reporter = args.reporter || args.r;
 args.count = args.count || args.c;
 
@@ -19,11 +19,11 @@ if (args.help || !args.url) {
 }
 
 timeliner(args)
-  .then(timeliner.reporters[reporter])
   .then((output) => {
+    const op = timeliner.reporters[reporter](output, args.url);
     if (reporter === 'fps') {
-      output.forEach(o => { console.log(o); });
+      op.forEach(o => { console.log(o); });
     } else {
-      console.log(output);
+      console.log(op);
     }
   });
