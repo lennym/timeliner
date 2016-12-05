@@ -23,6 +23,29 @@ $ timeliner http://example.com
 └──────────────────┴───────┴───────┴───────┘
 ```
 
+### Side by side comparison:
+
+You can run timeliner against two websites in parallel which will return a comparison of metrics, with an indicator of whether the difference is statistically significant (p<0.05).
+
+```shell
+$ timeliner https://facebook.com https://twitter.com
+
+# outputs
+┌──────────────────┬──────────────────────┬─────────────────────┬──────────┐
+│ metric           │ https://facebook.com │ https://twitter.com │ p < 0.05 │
+├──────────────────┼──────────────────────┼─────────────────────┼──────────┤
+│ render           │ 0.835                │ 1.441               │ 0.079 ✘  │
+├──────────────────┼──────────────────────┼─────────────────────┼──────────┤
+│ domcontentloaded │ 0.916                │ 1.492               │ 0.080 ✘  │
+├──────────────────┼──────────────────────┼─────────────────────┼──────────┤
+│ load             │ 0.989                │ 3.036               │ 0.118 ✘  │
+└──────────────────┴──────────────────────┴─────────────────────┴──────────┘
+```
+
+*Note: you may need to increase the count option (i.e. sample size) in order to see statistical significance.*
+
+### Scrolling performance:
+
 ```shell
 # analyse scrolling performance on a long webpage
 $ timeliner http://buzzfeed.com --reporter fps --sleep 5000
@@ -57,6 +80,10 @@ set the number of times to load the page before aggregating results - Default `5
 ### `reporter`
 
 *CLI only* - set the reporter to be used to output results - supported values: `table` (default), `basic`, `fps`, `json`
+
+### `progress`
+
+if set then a progress bar will be output to the console showing test execution progress
 
 ### `scroll`
 
