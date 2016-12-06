@@ -22,7 +22,7 @@ timeliner(args)
   .then((output) => {
     const op = timeliner.reporters[reporter](output, args.url);
     if (reporter === 'fps') {
-      op.forEach(o => { console.log(o); });
+      op.forEach(o => o.forEach(chart => console.log(chart)));
     } else {
       console.log(op);
     }
