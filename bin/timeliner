@@ -20,13 +20,13 @@ if (args.help || !args.url) {
 
 timeliner(args)
   .then((data) => {
-    if (args.reporter === 'table') {
+    if (reporter === 'table') {
       return Promise.resolve(data)
         .then(timeliner.reporters.basic)
         .then((result) => timeliner.reporters.table(result, args.url));
     } else {
       return Promise.resolve(data)
-        .then(timeliner.reporters[args.reporter]);
+        .then(timeliner.reporters[reporter]);
     }
   })
   .then((output) => {
