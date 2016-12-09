@@ -58,9 +58,8 @@ const timeliner = require('timeliner');
 
 timeliner({ url: 'http://google.com' })
   .then(timeliner.reporters.basic)
-  .then((results) => {
-    // your code here
-  });
+  .then(timeliner.reporters.table)
+  .then(result => console.log(result));
 ```
 
 The reporter step can be omitted to provide the raw timeline logs to analyse as you require.
@@ -103,7 +102,11 @@ sets the url of the webdriver remote server to use - Default `http://localhost:9
 
 ## Custom metrics
 
+### Using `console.timeStamp`
+
 You can fire custom events by calling `console.timeStamp` from anywhere within your code with a label that matches `timeliner.*`. This will then report the first occurence of that event with a metric name of the wildcard portion of the timestamp label.
+
+These can either be fired directly by the site under test, or injected as part of the test run using the `inject` option.
 
 Example - inject some custom javascript into your page to trigger a custom event after 1 second.
 
@@ -121,4 +124,28 @@ timeliner({
     // result includes data for `custom-metric` event
     // result = { ... , 'custom-metric': { ... } }
   });
+```
+
+### In Code
+
+You can pass an optional function to the `basic` reporter as a second argument which can execute custom metrics and output them in a form compatible with the `table` reporter.
+
+The function should take a single set of logs as an argument and return an object keyed by metric names and with values corresponding to the value of each metric.
+
+Example:
+
+```javascript
+const timeliner = require('timeliner');
+
+function customMetrics (logs) {
+  // value = do some big map-reduce on the logs
+  return {
+    'my-metric': value
+  }
+}
+
+timeliner({ url: 'http://google.com' })
+  .then(logs => timeliner.reporters.basic(logs, customMetrics))
+  .then(timeliner.reporters.table)
+  .then(result => console.log(result));
 ```
