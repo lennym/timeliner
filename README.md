@@ -149,3 +149,5 @@ timeliner({ url: 'http://google.com' })
   .then(timeliner.reporters.table)
   .then(result => console.log(result));
 ```
+
+See [./examples/image-count.js](a full worked example of using custom metrics in code).
