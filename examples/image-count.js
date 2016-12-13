@@ -1,6 +1,5 @@
 /*
   An example which loads the github homepage and counts the number of images requested
-
 */
 
 const timeliner = require('timeliner');

@@ -1,7 +1,7 @@
 {
   "name": "timeliner",
   "version": "1.4.1",
-  "description": "Network Timeline Analyser",
+  "description": "Automated Browser Timeline Analyser",
   "main": "index.js",
   "bin": "bin/timeliner",
   "scripts": {
