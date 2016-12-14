@@ -25,8 +25,8 @@
     "chromedriver": "^2.24.1",
     "cli-progress": "^1.2.0",
     "cli-table": "^0.3.1",
-    "lodash.meanby": "^4.10.0",
     "minimist": "^1.2.0",
+    "statistics": "^3.3.0",
     "ttest": "^1.1.0",
     "wd": "^1.0.0"
   },
