@@ -30,7 +30,6 @@ function log (data) {
 
 timeliner(args)
   .then((data) => {
-    console.log(`Reporting: ${reporter.join(', ')}`);
     return Promise.map(reporter, (r) => {
       if (!timeliner.reporters[r] && !r.match(/^chart\|.+/)) {
         return `Unrecognised reporter type: "${r}"`;
