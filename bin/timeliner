@@ -41,9 +41,10 @@ timeliner(args)
           .then((result) => timeliner.reporters.table(result, args.url));
       } else if (r.match(/^chart\|.+/)) {
         const metric = r.split('|')[1];
+        const options = args.url.map(u => ({ caption: `${u} - ${metric}` }));
         return Promise.resolve(data)
           .then(timeliner.reporters.basic)
-          .then((d) => timeliner.reporters.chart(d.map(set => set[metric].raw)));
+          .then((d) => timeliner.reporters.chart(d.map(set => set[metric].raw), options));
       } else {
         return Promise.resolve(data)
           .then(timeliner.reporters[r]);
