@@ -37,5 +37,10 @@
   "devDependencies": {
     "mocha": "^3.2.0",
     "semistandard": "^9.1.0"
+  },
+  "semistandard": {
+    "ignore": [
+      "test"
+    ]
   }
 }
