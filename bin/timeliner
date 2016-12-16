@@ -31,19 +31,18 @@ function log (data) {
 timeliner(args)
   .then((data) => {
     return Promise.map(reporter, (r) => {
-      if (!timeliner.reporters[r] && !r.match(/^chart\|.+/)) {
+      if (!timeliner.reporters[r] && !r.match(/^chart:.+/)) {
         return `Unrecognised reporter type: "${r}"`;
       }
       if (r === 'table') {
         return Promise.resolve(data)
           .then(timeliner.reporters.basic)
           .then(timeliner.reporters.table);
-      } else if (r.match(/^chart\|.+/)) {
-        const metric = r.split('|')[1];
-        const options = args.url.map(u => ({ caption: `${u} - ${metric}` }));
+      } else if (r.match(/^chart:.+/)) {
+        const metric = r.split(':')[1];
         return Promise.resolve(data)
           .then(timeliner.reporters.basic)
-          .then((d) => timeliner.reporters.chart(d.map(set => set[metric].raw), options));
+          .then((d) => timeliner.reporters.chart(d, metric));
       } else {
         return Promise.resolve(data)
           .then(timeliner.reporters[r]);

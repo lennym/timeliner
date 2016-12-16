@@ -78,11 +78,11 @@ set the number of times to load the page before aggregating results - Default `5
 
 ### `reporter`
 
-*CLI only* - set the reporter to be used to output results - supported values: `table` (default), `chart|<metric>`, `basic`, `fps`, `json`
+*CLI only* - set the reporter to be used to output results - supported values: `table` (default), `chart:<metric>`, `basic`, `fps`, `json`
 
-If the `chart|<metric>` reporter is used, then `<metric>` must be a metric name present in the result set. e.g. `chart|load` will output a chart showing the value of the load metric for each run.
+If the `chart:<metric>` reporter is used, then `<metric>` must be a metric name present in the result set. e.g. `chart:load` will output a chart showing the value of the load metric for each run.
 
-Multiple reporters can also be specified by separating with a comma. e.g. `chart|load,table` will output load time charts, and a table of all metrics.
+Multiple reporters can also be specified by separating with a comma. e.g. `chart:load,table` will output load time charts, and a table of all metrics.
 
 ### `progress`
 
