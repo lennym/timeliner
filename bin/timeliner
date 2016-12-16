@@ -5,7 +5,7 @@ const args = require('minimist')(process.argv.slice(2));
 const timeliner = require('../');
 const Promise = require('bluebird');
 
-args.url = args.url || args._.slice(0, 2);
+args.url = args.url || args._;
 args.reporter = args.reporter || args.r;
 args.count = args.count || args.c;
 
@@ -37,7 +37,7 @@ timeliner(args)
       if (r === 'table') {
         return Promise.resolve(data)
           .then(timeliner.reporters.basic)
-          .then((result) => timeliner.reporters.table(result, args.url));
+          .then(timeliner.reporters.table);
       } else if (r.match(/^chart\|.+/)) {
         const metric = r.split('|')[1];
         const options = args.url.map(u => ({ caption: `${u} - ${metric}` }));
