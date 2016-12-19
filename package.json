@@ -1,6 +1,6 @@
 {
   "name": "timeliner",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Automated Browser Timeline Analyser",
   "main": "index.js",
   "bin": "bin/timeliner",
