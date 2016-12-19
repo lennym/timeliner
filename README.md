@@ -90,7 +90,7 @@ if set then a progress bar will be output to the console showing test execution 
 
 ### `scroll`
 
-if set, injects a script into the page which binds a vertical scroll to `window.requestAnimationFrame` making the page scroll continuously, recommended if using `fps` reporter - Default `false`
+if set, injects a script into the page which binds a vertical scroll to `window.requestAnimationFrame` making the page scroll continuously. If a numerical value is provided then the page will scroll by that amount per frame - Default `false`
 
 ### `sleep`
 
