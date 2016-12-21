@@ -4,6 +4,14 @@
 
 Uses chromedriver to load a webpage a number of times and aggregates performance metrics from Chrome's devtools timelines.
 
+## Installation
+
+Install from npm. Use `-g` flag to install CLI.
+
+```shell
+npm install timeliner [-g]
+```
+
 ## Usage
 
 ### From the command line:
